@@ -287,7 +287,17 @@ Public Sub Report_Open()
       a.Margin.Bottom = "7mm"
       
       a = New ReportLabel(ReportVBox1)
-      a.Text = sDados["telefone"] & " - " & sDados["email"] & " - " & sDados["link"]
+      If sDados["telefone"] <> "" Then 
+        a.Text = sDados["telefone"] & " - "
+      Endif
+      If sDados["email"] <> "" Then 
+        a.Text &= sDados["email"] & " - "
+      Endif
+      If sDados["link"] = "" Then 
+        a.Text = Left(a.Text, Len(a.Text) - 2)
+      Else 
+        a.Text &= sDados["link"]
+      Endif
       a.Font.bold = True
       a.Font.Size = 11
       a.Margin.Left = "12mm"

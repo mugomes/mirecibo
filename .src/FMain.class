@@ -122,6 +122,6 @@ End
 
 Public Sub mnuCheckUpdate_Click()
 
-  Shell "xdg-open \"https://www.mestredainfo.com.br/2025/01/mirecibo.html\""
+  Shell "xdg-open \"https://www.mestredainfo.com.br/p/mirecibo.html\""
 
 End
