@@ -47,11 +47,6 @@
     }
     { Menu8 Menu
     }
-    { mnuSuporte Menu
-      Text = ("Suporte")
-    }
-    { Menu7 Menu
-    }
     { mnuApoie Menu
       Text = ("Apoie MIRecibo")
     }

@@ -2,7 +2,7 @@
 Title=MIRecibo
 Startup=FMain
 Icon=mirecibo.png
-Version=1.0.6
+Version=1.0.7
 Component=gb.image
 Component=gb.gtk3
 Component=gb.form

@@ -1,6 +1,6 @@
 ' Gambas class file
 
-' Copyright (C) 2004-2025 Murilo Gomes Julio
+' Copyright (C) 2025 Murilo Gomes Julio
 ' SPDX-License-Identifier: GPL-2.0-only
 
 ' Mestre da Info
@@ -112,12 +112,6 @@ Public Sub mnuRelatorioPJ_Click()
   FRReport.sTipo = "pj"
   FRReport.ShowDialog()
   
-End
-
-Public Sub mnuSuporte_Click()
-
-  FSuporte.ShowDialog()
-
 End
 
 Public Sub mnuCheckUpdate_Click()
