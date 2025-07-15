@@ -3,8 +3,7 @@
 ' Copyright (C) 2025 Murilo Gomes Julio
 ' SPDX-License-Identifier: GPL-2.0-only
 
-' Mestre da Info
-' Site: https://www.mestredainfo.com.br
+' Site: https://www.mugomes.com.br
 
 Public sTipo As String = "pf"
 Public sID As Integer = 0
@@ -24,9 +23,26 @@ Public Sub Form_Open()
     Dim rs As Result = $conecta.Exec("SELECT * FROM mi_clientes WHERE id=&1 AND tipo=&2", sID, sTipo)
     While (rs.Available)
       txtNome.Text = rs!nome
+      txtCPFCNPJ.Text = rs!cpf
+      txtDataDeNascimento.Text = rs!datadenascimento
+      txtTelCel.Text = rs!telefone
+      txtEmail.Text = rs!email
+      txtEndereco.Text = rs!endereco
+      txtNumero.Text = rs!endnum
+      txtBairro.Text = rs!bairro
+      txtComplemento.Text = rs!complemento
+      txtCEP.Text = rs!cep
+      txtCidade.Text = rs!cidade
+      txtEstado.Text = rs!estado
+      txtComentario.Text = rs!comentario
+      
       rs.MoveNext()
     Wend
     $conecta.Close()
+  Endif
+  
+  If "pj" = sTipo Then 
+    lblCPFCNPJ.Text = "CNPJ"
   Endif
   
 End
@@ -46,9 +62,9 @@ Public Sub btnSalvar_Click()
     $conecta.Open()
     
     If sID = 0 Then 
-      $conecta.Exec("INSERT INTO mi_clientes (nome,tipo) VALUES (&1,&2)", Trim(txtNome.Text), sTipo)
+      $conecta.Exec("INSERT INTO mi_clientes (nome,cpf,datadenascimento,telefone,email,endereco,endnum,bairro,complemento,cep,cidade,estado,comentario,tipo) VALUES (&1,&2,&3,&4,&5,&6,&7,&8,&9,&{10},&{11},&{12},&{13},&{14})", Trim(txtNome.Text), Trim(txtCPFCNPJ.Text), Trim(txtDataDeNascimento.Text), Trim(txtTelCel.Text), Trim(txtEmail.Text), Trim(txtEndereco.Text), Trim(txtNumero.Text), Trim(txtBairro.Text), Trim(txtComplemento.Text), Trim(txtCEP.Text), Trim(txtCidade.Text), Trim(txtEstado.Text), Trim(txtComentario.Text), sTipo)
     Else 
-      $conecta.Exec("UPDATE mi_clientes SET nome=&1,tipo=&2 WHERE id=&3", Trim(txtNome.Text), sTipo, sID)
+      $conecta.Exec("UPDATE mi_clientes SET nome=&1,cpf=&2,datadenascimento=&3,telefone=&4,email=&5,endereco=&6,endnum=&7,bairro=&8,complemento=&9,cep=&{10},cidade=&{11},estado=&{12},comentario=&{13},tipo=&{14} WHERE id=&{15}", Trim(txtNome.Text), Trim(txtCPFCNPJ.Text), Trim(txtDataDeNascimento.Text), Trim(txtTelCel.Text), Trim(txtEmail.text), Trim(txtEndereco.Text), Trim(txtNumero.Text), Trim(txtBairro.Text), Trim(txtComplemento.Text), Trim(txtCEP.Text), Trim(txtCidade.Text), Trim(txtEstado.Text), Trim(txtComentario.Text), sTipo, sID)
     Endif 
     
     $conecta.Close()
@@ -57,5 +73,9 @@ Public Sub btnSalvar_Click()
     
     Me.Close()
   Endif
+  
+End
+
+Public Sub tb1_Click()
   
 End

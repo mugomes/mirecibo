@@ -3,13 +3,40 @@
 ' Copyright (C) 2025 Murilo Gomes Julio
 ' SPDX-License-Identifier: GPL-2.0-only
 
-' Mestre da Info
-' Site: https://www.mestredainfo.com.br
+' Site: https://www.mugomes.com.br
 
 Public dbPath As String = User.Home & "/.config/mirecibo/dados/"
 Public dbName As String = "mirecibo.sqlite"
 
 Private $conecta As Connection
+
+Private Function checkColumn(nome As String, coluna As String) As Boolean 
+
+  Dim $conecta1 As Connection
+  $conecta1 = New Connection
+  $conecta1.Type = "sqlite3"
+  $conecta1.Host = dbPath 
+  $conecta1.Name = dbName
+  $conecta1.Open()
+  
+  Dim a As Boolean = False 
+  Dim sql As String = "PRAGMA table_info(" & nome & ")"
+  Dim rs As Result = $conecta1.Exec(sql)
+  
+  While (rs.Available)
+    If rs[1] = coluna Then 
+      a = True
+      Exit
+    Endif 
+    
+    rs.MoveNext()
+  Wend
+  
+  $conecta1.Close()
+  
+  Return a
+  
+End
 
 Private Sub createDB()
   
@@ -33,6 +60,54 @@ Private Sub createDB()
   $conecta.Open()
   
   Dim sql As String = "CREATE TABLE IF NOT EXISTS mi_clientes (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, tipo TEXT NOT NULL);"
+  
+  If False = checkColumn("mi_clientes", "cpf") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN cpf TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "datadenascimento") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN datadenascimento TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "telefone") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN telefone TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "email") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN email TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "endereco") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN endereco TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "endnum") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN endnum TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "bairro") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN bairro TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "complemento") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN complemento TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "cep") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN cep TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "cidade") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN cidade TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "estado") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN estado TEXT;"
+  Endif
+  
+  If False = checkColumn("mi_clientes", "comentario") Then
+    sql &= "ALTER TABLE mi_clientes ADD COLUMN comentario TEXT;"
+  Endif
   
   sql &= "CREATE TABLE IF NOT EXISTS mi_recibos (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, nome TEXT NOT NULL, valorextenso TEXT NULL, referente TEXT NULL, valor TEXT NULL, outros1 TEXT NULL, outros2 TEXT NULL, outros3 TEXT NULL, valor1 TEXT NULL, valor2 TEXT NULL, valor3 TEXT NULL, datadevencimento TEXT NULL, total TEXT NULL, tipo TEXT NOT NULL);"
   
@@ -115,7 +190,7 @@ Public Sub mnuRelatorioPJ_Click()
 End
 
 Public Sub mnuCheckUpdate_Click()
-
+  
   Shell "xdg-open \"https://www.mestredainfo.com.br/p/mirecibo.html\""
-
+  
 End

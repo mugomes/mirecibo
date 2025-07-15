@@ -1,21 +1,123 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,64,21)
+  MoveScaled(0,0,64,65)
   Font = Font["12"]
   Text = ("Adicionar Cliente")
   Icon = Picture["mirecibo.png"]
   Resizable = False
-  { Label1 Label
-    MoveScaled(1,1,61,5)
-    Font = Font["Bold"]
-    Text = ("Nome Completo")
-  }
-  { txtNome TextBox
-    MoveScaled(1,6,62,5)
-  }
   { btnSalvar Button
-    MoveScaled(21,13,21,6)
+    MoveScaled(21,57,21,6)
     Text = ("Salvar")
+  }
+  { tb1 TabStrip
+    MoveScaled(0,0,63,56)
+    Count = 3
+    Index = 0
+    Text = ("Dados Básicos")
+    { Label1 Label
+      MoveScaled(1,1,61,5)
+      Font = Font["Bold"]
+      Text = ("Nome Completo")
+    }
+    { txtNome TextBox
+      MoveScaled(1,6,60,5)
+    }
+    { lblCPFCNPJ Label
+      MoveScaled(1,11,61,5)
+      Font = Font["Bold"]
+      Text = ("CPF")
+    }
+    { txtCPFCNPJ TextBox
+      MoveScaled(1,16,60,5)
+    }
+    { Label3 Label
+      MoveScaled(1,21,61,5)
+      Font = Font["Bold"]
+      Text = ("Data de Nascimento")
+    }
+    { txtDataDeNascimento TextBox
+      MoveScaled(1,26,60,5)
+    }
+    { txtTelCel TextBox
+      MoveScaled(1,36,60,5)
+    }
+    { Label11 Label
+      MoveScaled(1,31,61,5)
+      Font = Font["Bold"]
+      Text = ("Telefone/Celular")
+    }
+    { txtEmail TextBox
+      MoveScaled(1,46,60,5)
+    }
+    { Label12 Label
+      MoveScaled(1,41,61,5)
+      Font = Font["Bold"]
+      Text = ("E-mail")
+    }
+    Index = 1
+    Text = ("Endereço")
+    { Label4 Label
+      MoveScaled(1,2,32,5)
+      Font = Font["Bold"]
+      Text = ("Endereço")
+    }
+    { txtEndereco TextBox
+      MoveScaled(1,7,32,5)
+    }
+    { Label5 Label
+      MoveScaled(34,2,17,5)
+      Font = Font["Bold"]
+      Text = ("Número")
+    }
+    { txtNumero TextBox
+      MoveScaled(34,7,28,5)
+    }
+    { txtBairro TextBox
+      MoveScaled(1,18,32,5)
+    }
+    { Label6 Label
+      MoveScaled(1,13,32,5)
+      Font = Font["Bold"]
+      Text = ("Bairro")
+    }
+    { Label7 Label
+      MoveScaled(34,13,22,5)
+      Font = Font["Bold"]
+      Text = ("Complemento")
+    }
+    { txtComplemento TextBox
+      MoveScaled(34,18,28,5)
+    }
+    { txtCEP TextBox
+      MoveScaled(1,28,61,5)
+    }
+    { Label8 Label
+      MoveScaled(1,23,32,5)
+      Font = Font["Bold"]
+      Text = ("CEP")
+    }
+    { Label9 Label
+      MoveScaled(1,34,32,5)
+      Font = Font["Bold"]
+      Text = ("Cidade")
+    }
+    { Label10 Label
+      MoveScaled(34,34,27,5)
+      Font = Font["Bold"]
+      Text = ("Estado")
+    }
+    { txtEstado ComboBox
+      MoveScaled(34,39,26,5)
+    }
+    { txtCidade ComboBox
+      MoveScaled(1,39,32,5)
+    }
+    Index = 2
+    Text = ("Comentário")
+    { txtComentario TextArea
+      MoveScaled(1,1,61,46)
+    }
+    Index = 0
   }
 }
