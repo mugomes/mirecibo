@@ -107,11 +107,11 @@
       Font = Font["Bold"]
       Text = ("Estado")
     }
-    { txtEstado ComboBox
-      MoveScaled(34,39,26,5)
+    { txtCidade TextBox
+      MoveScaled(1,38.375,32,5)
     }
-    { txtCidade ComboBox
-      MoveScaled(1,39,32,5)
+    { txtEstado TextBox
+      MoveScaled(34,38.375,28,5)
     }
     Index = 2
     Text = ("Comentário")
