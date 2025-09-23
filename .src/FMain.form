@@ -48,7 +48,7 @@
     { Menu8 Menu
     }
     { mnuApoie Menu
-      Text = ("Apoie MiRecibo")
+      Text = ("Assinantes")
     }
     { Menu6 Menu
     }

@@ -133,7 +133,7 @@ End
 
 Public Sub mnuApoie_Click()
   
-  Shell "xdg-open \"https://mugomes.github.io/apoie.html\""
+  Shell "xdg-open \"https://www.mugomes.com.br/2025/07/mirecibo.html\""
   
 End
 
@@ -191,6 +191,6 @@ End
 
 Public Sub mnuCheckUpdate_Click()
   
-  Shell "xdg-open \"https://mugomes.github.io/softwares/mirecibo.html\""
+  Shell "xdg-open \"https://www.mugomes.com.br/2025/07/mirecibo.html\""
   
 End

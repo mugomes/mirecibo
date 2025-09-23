@@ -2,7 +2,7 @@
 Title=MiRecibo
 Startup=FMain
 Icon=mirecibo.png
-Version=1.0.9
+Version=1.0.10
 Component=gb.image
 Component=gb.gtk3
 Component=gb.form

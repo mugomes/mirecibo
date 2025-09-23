@@ -4,7 +4,7 @@ Gerencie recibos para pagamentos com valor por extenso e calculo automático. Ge
 
 ## Informações
 
-- [Página MiRecibo](https://mugomes.github.io/softwares/mirecibo.html)
+- [Página MiRecibo](https://www.mugomes.com.br/2025/07/mirecibo.html)
 
 ## License
 
