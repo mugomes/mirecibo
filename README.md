@@ -1,5 +1,8 @@
 # MiRecibo
 
+> [!NOTE]
+> This repository has been migrated to Codeberg, please see: https://codeberg.org/bluice/mirecibo
+
 Gerencie recibos para pagamentos com valor por extenso e calculo automático. Gere relatórios para impressão ou salve-os em PDF.
 
 ## Informações
